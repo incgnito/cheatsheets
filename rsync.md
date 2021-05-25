@@ -29,6 +29,7 @@ rsync -avz ./src/ /dest
 -z, --compress
 -n, --dry-run
     --partial   # allows resuming of aborted syncs
+    --bwlimit=RATE    # limit socket I/O bandwidth
 ```
 
 ### Display options
@@ -36,6 +37,7 @@ rsync -avz ./src/ /dest
 ```bash
 -q, --quiet
 -v, --verbose
+    --stats
 -h, --human-readable
     --progress
 -P                     # same as --partial --progress
@@ -69,6 +71,10 @@ rsync -avz ./src/ /dest
 --files-from=FILE    # read list of filenames from FILE
 ```
 
+```bash
+-C, --cvs-exclude    # exclude from local/global .cvsignore
+```
+
 ### Archive options
 
 ```bash
@@ -82,7 +88,7 @@ rsync -avz ./src/ /dest
 -t, --times      # preserve times
 -g, --group      # preserve group
 -o, --owner      # preserve owner
--D               # --devices --specials
+-D               # same as --devices --specials
 ```
 
 ```bash
